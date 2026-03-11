@@ -1,6 +1,6 @@
 const express = require('express');
 const { execSync, spawn } = require('child_process');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const path = require('path');
 
 const app = express();
