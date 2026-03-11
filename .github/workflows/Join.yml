@@ -7,7 +7,7 @@ on:
         description: 'קישור Google Meet'
         required: true
       nav_url:
-        description: 'אתר לפתוח (אופציונלי)'
+        description: 'אתר לפתוח'
         required: false
         default: 'https://google.com'
 
@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Tell server to join Meet
         run: |
-          curl -s -X POST https://browser-i4vk.onrender.com/join \
+          curl -s -X POST https://browser-production-866a.up.railway.app/join \
             -H "Content-Type: application/json" \
             -d '{"code": "${{ inputs.meet_url }}"}'
 
@@ -26,6 +26,6 @@ jobs:
 
       - name: Navigate to URL
         run: |
-          curl -s -X POST https://browser-i4vk.onrender.com/navigate \
+          curl -s -X POST https://browser-production-866a.up.railway.app/navigate \
             -H "Content-Type: application/json" \
             -d '{"url": "${{ inputs.nav_url }}"}'
